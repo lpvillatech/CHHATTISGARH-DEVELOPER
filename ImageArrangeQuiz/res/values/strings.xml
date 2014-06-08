@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImageArrangeQuiz</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_level_screen">LevelScreen</string>
+    <string name="title_activity_result_screen">ResultScreen</string>
+
+</resources>
