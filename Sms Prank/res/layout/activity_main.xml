@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textview_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sender Cell Number" />
+
+        <EditText
+            android:id="@+id/edittext_rechargeamount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter amount"
+            android:inputType="number" />
+        <TextView 
+            android:id="@+id/textview_msgbody"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Message Body"/>
+        <EditText 
+            android:id="@+id/edittext_msgbody"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lines="8"
+            android:textSize="12sp"
+            android:hint="Write message body"/>
+
+        <TextView
+            android:id="@+id/textview_schedule_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule Time In Minute" />
+
+        <Spinner
+            android:id="@+id/spinner_minute"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_minute" />
+        <Button 
+            android:id="@+id/button_schedule"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:onClick="onSchedule"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
