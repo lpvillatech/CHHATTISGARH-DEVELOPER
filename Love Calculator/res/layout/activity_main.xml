@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textview_topbar_mainact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="@string/app_name"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textview_yourname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/boy_name"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/edittext_boy_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+ />
+
+        <TextView
+            android:id="@+id/textview_partner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/girl_name"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/edittext_girl_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+ />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_cal_love"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:onClick="loveStrengthTest"
+        android:text="@string/test"
+        android:textSize="25sp"
+   />
+
+</RelativeLayout>

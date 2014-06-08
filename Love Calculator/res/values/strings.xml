@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Love Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="girl_name">Your Partner Name</string>
+    <string name="boy_name">Your Name</string>
+    <string name="love_percentage">Love Strength</string>
+    <string name="test">Calculate Love Strength</string>
+    <string name="title_activity_love_result_process">Calculate</string>
+    <string name="title_activity_love_result_done">Love Strength</string>
+    <string name="extra_love_percentage">lovestrength</string>
+    <string name="extra_name1">fname</string>
+    <string name="extra_name2">sname</string>
+    <string name="you_have">Your Love Strength</string>
+    <string name="bonding">Calculating....</string>
+    <string name="congr">Congratulation! </string>
+    <string name="your_lo_re">Your Love Strength is </string>
+    <string name="warn_msg">Please enter name in both field.</string>
+
+</resources>
