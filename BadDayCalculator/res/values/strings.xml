@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BadDayCalculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_result_screen">ResultScreen</string>
+    <string name="extra_person_name">personname</string>
+    <string name="text_button">Test</string>
+    <string name="text_textview_name">Person Name</string>
+    <string name="hint_edittext">Enter person name</string>
+    <string name="text_result">Your Bad day is </string>
+    <string name="text_process_result">Wait your Bad day is calculating...</string>
+
+</resources>
