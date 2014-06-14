@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,7 +29,7 @@ private RelativeLayout layout;
 		setContentView(R.layout.activity_main);
 		layout = (RelativeLayout)findViewById(R.id.layout_splitimage);
 		layout.setOnTouchListener(this);
-		mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.image);
+		mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
 		mListImageInfos = ImageSplitterUtility.getSplitedImageInfos(getApplicationContext(), 4, 4, mBitmap, 400, 400);
 		mSplitedImageInfosOriginal = new ArrayList<SplitedImageInfo>();
 		mSplitedImageInfosOriginal.addAll(mListImageInfos);
@@ -113,9 +114,17 @@ private RelativeLayout.LayoutParams paramsGlobal;
 					 n = mListImageInfos.get(selectedIndex).getTop();
 					 mListImageInfos.get(selectedIndex).setTop(mListImageInfos.get(newIndex).getTop());
 					 mListImageInfos.get(newIndex).setTop(n);
+					 
+					 
+					 
 					 SplitedImageInfo info = mListImageInfos.get(selectedIndex);
 					 mListImageInfos.set(selectedIndex, mListImageInfos.get(newIndex));
 					 mListImageInfos.set(newIndex, info);
+					 
+					//replace index number
+					 int sno = mListImageInfos.get(newIndex).getSno();
+					mListImageInfos.get(newIndex).setSno(mListImageInfos.get(selectedIndex).getSno());
+					mListImageInfos.get(selectedIndex).setSno(sno);
 					 
 					 
 					 paramsGlobal = (LayoutParams) mListImageInfos.get(newIndex).getImageView().getLayoutParams();
@@ -132,11 +141,16 @@ private RelativeLayout.LayoutParams paramsGlobal;
 					  
 				 }else if(selectedIndex!=-1 && mImageViewGlobal!=null && newIndex==-1){
 					 mImageViewGlobal.setLayoutParams(mListImageInfos.get(selectedIndex).getImageView().getLayoutParams());
+					 paramsGlobal = (LayoutParams) mImageViewGlobal.getLayoutParams();
+					 paramsGlobal.leftMargin = mListImageInfos.get(selectedIndex).getLeft();
+					 paramsGlobal.topMargin = mListImageInfos.get(selectedIndex).getTop();
+					 mImageViewGlobal.setLayoutParams(paramsGlobal);
 				 }
 				 if(isGameCompleted()){
 					 Toast.makeText(MainActivity.this, "Game Completed!", Toast.LENGTH_LONG).show();
 					 finish();
 				 }
+				 newIndex=-1;
 				 break;
 		 }
 		return true;
@@ -175,6 +189,7 @@ private RelativeLayout.LayoutParams paramsGlobal;
 	private boolean isGameCompleted(){
 		
 		for(int i=0;i<mListImageInfos.size() && i<mSplitedImageInfosOriginal.size();i++){
+			Log.e("match image index",mListImageInfos.get(i).getSno()+" "+mSplitedImageInfosOriginal.get(i).getSno());
 			if(mListImageInfos.get(i).getSno()!=mSplitedImageInfosOriginal.get(i).getSno()){
 				return false;
 			}
