@@ -6,5 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_level_screen">LevelScreen</string>
     <string name="title_activity_result_screen">ResultScreen</string>
+    <string name="no_gallery_app">No Gallary App Available!</string>
+    <string name="no_camera_app">No Camera App Available!</string>
+    <string name="img_read_fail">Fail reading image.</string>
+    <string name="browse_warn_msg">No photo selected.</string>
 
 </resources>
