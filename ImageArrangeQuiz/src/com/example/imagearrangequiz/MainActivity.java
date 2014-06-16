@@ -131,6 +131,8 @@ public class MainActivity extends Activity implements OnTouchListener {
 			ImageView imageViewReplace = getSetelctedView(x, y);
 			if (imageViewReplace != null && newIndex != -1
 					&& mImageViewGlobal != null) {
+				removeViewsFromLayout();
+				
 				int n = mListImageInfos.get(selectedIndex).getLeft();
 				mListImageInfos.get(selectedIndex).setLeft(
 						mListImageInfos.get(newIndex).getLeft());
@@ -144,13 +146,16 @@ public class MainActivity extends Activity implements OnTouchListener {
 				SplitedImageInfo info = mListImageInfos.get(selectedIndex);
 				mListImageInfos.set(selectedIndex,
 						mListImageInfos.get(newIndex));
+
 				mListImageInfos.set(newIndex, info);
 
 				// replace index number
-				int sno = mListImageInfos.get(newIndex).getSno();
-				mListImageInfos.get(newIndex).setSno(
-						mListImageInfos.get(selectedIndex).getSno());
-				mListImageInfos.get(selectedIndex).setSno(sno);
+				/*
+				 * int sno = mListImageInfos.get(newIndex).getSno();
+				 * mListImageInfos.get(newIndex).setSno(
+				 * mListImageInfos.get(selectedIndex).getSno());
+				 * mListImageInfos.get(selectedIndex).setSno(sno);
+				 */
 
 				paramsGlobal = (LayoutParams) mListImageInfos.get(newIndex)
 						.getImageView().getLayoutParams();
@@ -191,7 +196,9 @@ public class MainActivity extends Activity implements OnTouchListener {
 		}
 		return true;
 	}
-
+private void removeViewsFromLayout(){
+	layout.removeAllViews();
+}
 	private ImageView getSetelctedView(int x, int y) {
 		int x1 = 0, y1 = 0, w = 0, h = 0;
 
@@ -226,14 +233,15 @@ public class MainActivity extends Activity implements OnTouchListener {
 
 		for (int i = 0; i < mListImageInfos.size()
 				&& i < mSplitedImageInfosOriginal.size(); i++) {
-			Log.e("match image index", mListImageInfos.get(i).getSno() + " "
-					+ mSplitedImageInfosOriginal.get(i).getSno());
-			if (mListImageInfos.get(i).getSno() != mSplitedImageInfosOriginal
-					.get(i).getSno()) {
+			Log.e("match image index", (Integer) (mListImageInfos.get(i).getImageView().getTag())  + " "
+					+ (Integer) (mSplitedImageInfosOriginal
+							.get(i).getImageView().getTag()));
+			if ((Integer) (mListImageInfos.get(i).getImageView().getTag()) != (Integer) (mSplitedImageInfosOriginal
+					.get(i).getImageView().getTag())) {
 				return false;
 			}
 		}
-		return true;
+		return false;
 	}
 
 }

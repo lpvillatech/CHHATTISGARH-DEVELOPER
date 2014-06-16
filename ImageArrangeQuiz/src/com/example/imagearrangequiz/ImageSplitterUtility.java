@@ -33,12 +33,15 @@ public class ImageSplitterUtility {
 				info.setWidth(cellWidth);
 				info.setHeight(cellHeight);
 				info.setSno(i*column+j);
+				
 				RelativeLayout.LayoutParams params = new LayoutParams(cellWidth, cellHeight);
 				params.leftMargin = info.getLeft();
 				params.topMargin = info.getTop();
 				ImageView imageView = new ImageView(context);
+				
 				imageView.setLayoutParams(params);
 				imageView.setImageBitmap(getCroppedBitmapFromPathForTriangle(context, bitmap, info));
+				imageView.setTag(i*column+j);
 				info.setImageView(imageView);
 				imageInfos.add(info);
 			}
